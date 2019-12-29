@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'data_seeder',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'ask.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,9 +78,12 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'box_test',
-        'USER': 'box',
-        'PASSWORD': 'qwerty12345',
+       # 'NAME': 'box_test',
+       # 'USER': 'box',
+       # 'PASSWORD': 'qwerty12345',
+         'NAME': 'django_test',
+         'USER':'django',
+         'PASSWORD': 'Qspa12rT!',
         'HOST': 'localhost',
         'PORT': '',
     }

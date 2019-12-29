@@ -1,0 +1,27 @@
+{% if popular_question_list %}
+  <ul>
+    {% for question in popular_question_list %}
+      <li> <h5> {{ question.title }} </h5>
+    <a href="{% url 'qa:detail' question.id %}">Question {{ question.id }} page</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> No Question are available.</p>
+  {% endif %}
+
+
+
+<nav><ul class="pagination">
+    {%for p in paginator.page_range %}
+      {% if p == page.number %}
+        <li class="active">
+          {% else %}
+        <li>
+          {% endif %}
+          <a href=" {{ paginator.baseurl }}{{ p }}">
+            {{ p }} </a>
+        </li>
+        {% endfor %}
+  </ul>
+</nav>
