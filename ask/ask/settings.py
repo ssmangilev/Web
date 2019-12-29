@@ -78,13 +78,10 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-       # 'NAME': 'box_test',
-       # 'USER': 'box',
-       # 'PASSWORD': 'qwerty12345',
-         'NAME': 'django_test',
-         'USER':'django',
-         'PASSWORD': 'Qspa12rT!',
-        'HOST': 'localhost',
+       'NAME': 'box_test',
+       'USER': 'box',
+       'PASSWORD': 'qwerty12345',
+          'HOST': 'localhost',
         'PORT': '',
     }
 }
