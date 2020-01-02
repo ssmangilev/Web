@@ -23,8 +23,15 @@ class DetailQuestionView(generic.View):
     #model=Question
     #template_name='qa/question_detail.html'
     def get(self, request, pk):
-        form = AnswerForm()
         qs=Question.objects.get(pk=pk)
+        form = AnswerForm(initial={'question':qs.id})
+        return render (request, 'qa/question_detail.html', context={'form':form,'question':qs})
+    def post(self,request, pk):
+        bound_form=AnswerForm(request.POST)
+        qs=Question.objects.get(pk=pk)
+        if bound_form.is_valid():
+            new_answer=bound_form.save()
+            return redirect(qs)
         return render (request, 'qa/question_detail.html', context={'form':form,'question':qs})
 class QuestionCreateView(generic.View):
     def get(self, request):

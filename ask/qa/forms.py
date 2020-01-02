@@ -14,8 +14,8 @@ class AskForm(forms.Form): # Form for creating new Question
 
 class AnswerForm(forms.Form):
     text=forms.CharField(max_length=1000)
-    question=forms.ModelChoiceField()
+    question=forms.IntegerField()
     def save(self):
         user=User.objects.get(pk=1)
-        new_answer=Answer.objects.create(text=self.cleaned_data['text'],question=self.cleaned_data['question'],author=user)
+        new_answer=Answer.objects.create(text=self.cleaned_data['text'],question_id=self.cleaned_data['question'],author_id=user.id)
         return new_answer
