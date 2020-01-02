@@ -25,5 +25,6 @@ urlpatterns = [
     path('popular/',views.PopularView.as_view(), name='popular'),
     path('question/<int:pk>/',views.DetailQuestionView.as_view(),name='question_detail_view'),
     path('ask/',views.QuestionCreateView.as_view(),name='question_create_url'),
+    path('ask',views.QuestionCreateView.as_view(),name='question_create_url'),
     path('',views.IndexView.as_view(), name='index'),
 ]
