@@ -4,6 +4,12 @@ from django.views import generic, View
 from qa.models import Question,Answer
 from django.views import generic
 from qa.forms import *
+def testView(request,*args,**kwargs):
+    try:
+        return HttpResponse('OK')
+    except:
+        raise Http404
+
 class IndexView(generic.ListView):
     model = Question
     template_name='qa/index.html'

@@ -21,7 +21,7 @@ class Question(models.Model):
         return self.title
     def get_absolute_url(self):
         # write path to url name as app.name:url_pattern_name if app isnt root
-        return reverse ('qa:question_detail_view',args=[self.id])
+        return reverse ('question_detail_view',args=[self.id])
 
 class Answer (models.Model):
     text=models.TextField()
