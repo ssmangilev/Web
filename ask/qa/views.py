@@ -39,7 +39,7 @@ class DetailQuestionView(generic.View):
             new_answer=bound_form.save()
             return redirect(qs)
         else:
-            return render (request, 'qa/question_detail.html', context={'form':form,'question':qs})
+            return render (request, 'qa/question_detail.html', context={'form':bound_form,'question':qs})
 class QuestionCreateView(generic.View):
     def get(self, request):
         form = AskForm()
