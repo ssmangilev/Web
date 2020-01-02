@@ -19,7 +19,10 @@ from qa import views
 import re
 app_name='qa'
 urlpatterns = [
-    path('',views.IndexView.as_view()),
-    path('popular/',views.PopularView.as_view()),
-    path('question/<int:pk>/',views.DetailQuestionView.as_view(),name='detail'),
+
+    path('new/',views.IndexView.as_view(),name='new'),
+    path('popular/',views.PopularView.as_view(), name='popular'),
+    path('question/<int:pk>/',views.DetailQuestionView.as_view(),name='question_detail_view'),
+    path('ask/',views.QuestionCreateView.as_view(),name='question_create_url'),
+    path('',views.IndexView.as_view(), name='index'),
     ]

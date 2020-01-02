@@ -2,7 +2,7 @@
   <ul>
     {% for question in popular_question_list %}
       <li> <h5> {{ question.title }} </h5>
-    <a href="{% url 'qa:detail' question.id %}">Question {{ question.id }} page</a>
+    <a href="{% url 'qa:question_detail_view' question.id %}">Question {{ question.id }} page</a>
       </li>
     {% endfor %}
   </ul>

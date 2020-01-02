@@ -18,13 +18,13 @@ from django.urls import path,include
 from . import views
 import re
 urlpatterns = [
-    path('',views.testView),
+    path('',include('qa.urls')),
     path('admin/', admin.site.urls),
     path('login/',views.testView),
     path('signup/',views.testView),
-    path('question/<int:id>/',views.testView),
-    path('ask/',views.testView),
-    path('popular/',views.testView),
-    path('new/',views.testView),
+    #path('question/<int:id>/',views.testView),
+    #path('ask/',include('qa.urls',namespace='qa:question_create_url')),
+    #path('popular/',views.testView),
+    #path('new/',views.testView),
     path('qa/',include('qa.urls'))
 ]

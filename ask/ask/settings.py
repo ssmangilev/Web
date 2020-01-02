@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h-+omimv==c7ef**h*u7@$9n$+g6(bqqy5@gznog6-vfus@^)n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-       'NAME': 'box_test',
-       'USER': 'box',
-       'PASSWORD': 'qwerty12345',
-          'HOST': 'localhost',
+       'NAME': 'django_test',
+       'USER': 'django',
+       'PASSWORD': 'Qspa12rT!',
+               'HOST': 'localhost',
         'PORT': '',
     }
 }

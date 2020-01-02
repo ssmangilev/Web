@@ -1,5 +1,12 @@
+
 <h1> {{ question.title }} </h1>
 <p> {{ question.text }} </p>
 {% for answer in question.answer_set.all %}
 <h5> {{ answer.text }} </h5>
 {% endfor %}
+<form  method="post">
+  {% csrf_token %}
+  {{ form.question }}
+    {{ form.text }}
+    <button type="submit">Answer</button>
+</form>

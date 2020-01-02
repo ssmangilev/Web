@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 class QuestionManager(models.Manager):
     def new(self):
         return self.order_by('-added_at')
     def popular(self):
         return self.order_by('-rating')
-        
+
 # Create your models here.
 class Question(models.Model):
     title=models.CharField(max_length=255)
@@ -17,6 +19,9 @@ class Question(models.Model):
     objects=QuestionManager()
     def __str__(self):
         return self.title
+    def get_absolute_url(self):
+        # write path to url name as app.name:url_pattern_name if app isnt root
+        return reverse ('qa:question_detail_view',args=[self.id])
 
 class Answer (models.Model):
     text=models.TextField()
