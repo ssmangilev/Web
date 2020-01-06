@@ -19,8 +19,8 @@ from qa import views
 import re
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',views.testView),
-    path('signup/',views.testView),
+    path('login/',views.LoginView.as_view(),name='login'),
+    path('signup/',views.SignupView.as_view(),name='signup'),
     path('new/',views.IndexView.as_view(),name='new'),
     path('popular/',views.PopularView.as_view(), name='popular'),
     path('question/<int:pk>/',views.DetailQuestionView.as_view(),name='question_detail_view'),

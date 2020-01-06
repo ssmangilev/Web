@@ -1,0 +1,8 @@
+<h2> Registration page </h2>
+<form action="{% url 'signup' %}" method="post">
+  {% csrf_token %}
+  <h5>Username</h5> {{ form.username }}</br>
+    <h5>Email</h5>   {{ form.email }}</br>
+  <h5>Password</h5>    {{ form.password }}</br>
+    <button type="submit">Register</button>
+</form>

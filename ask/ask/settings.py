@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'qa.middleware.CheckSessionMiddleWare',
 ]
 
 ROOT_URLCONF = 'ask.urls'
@@ -78,9 +79,9 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-       'NAME': 'django_test',
-       'USER': 'django',
-       'PASSWORD': 'Qspa12rT!',
+       'NAME': 'box_test',
+       'USER': 'box',
+       'PASSWORD': 'qwerty12345',
                'HOST': 'localhost',
         'PORT': '',
     }
